@@ -19,14 +19,10 @@ class Test1
 		{
 			return _count;
 		}
-
 		/++
-		 + static class init
+		 + Default name of instances of this class, if none supplied in the constructor.
 		 +/
-		this()
-		{
-			// static class init
-		}
+		const auto DEFAULT_NAME = "NoName";
 	}
 
 	/++
@@ -34,10 +30,11 @@ class Test1
 	 +
 	 + First sentence of the second paragraph. And then the second.
 	 +
-	 + Params:
-	 + name = name of this object
+	 + Params: name = name of this object
+	 +
+	 + See_Also: DEFAULT_NAME
 	 +/
-	this(char[] name)
+	this(char[] name = DEFAULT_NAME)
 	{
 		++_count;
 		_name = name;
@@ -65,7 +62,6 @@ private:
 
 	unittest
 	{
-		writefln("UnitTest: testclass.Test1");
 		assert(count == 0);
 		// this one gets GC'd in the very end
 		Test1 t1 = new Test1("t1");
@@ -79,9 +75,8 @@ private:
 		t1.name = "t1a";
 		assert(count == 1); // t1 is still alive
 	}
-}
-
-unittest
-{
-	writefln("UnitTest: testclass");
+	unittest {
+		auto x = new Test1();
+		assert(x.name == DEFAULT_NAME);
+	}
 }
