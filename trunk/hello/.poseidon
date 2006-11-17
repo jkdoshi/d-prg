@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<projectDescription>
+	<name>hello</name>
+	<comment />
+	<filter>*.d</filter>
+	<showemptyfolder>0</showemptyfolder>
+	<buildSpec>
+		<buildOption>-clean -full -w -unittest -debug -g -Dddoc</buildOption>
+		<mainFile>hello.d</mainFile>
+	</buildSpec>
+</projectDescription>
