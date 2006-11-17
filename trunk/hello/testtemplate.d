@@ -7,8 +7,10 @@ import std.stdio;
 
 /++
  + Compile-time factorial.
- + Example:
+ + Examples:
  +--------------------------------------
+ + /* the argument to factorial has to be const since this is a
+ +    compile-time (template-based) function */
  + const int y = 10;
  + int x = factorial!(y);
  +--------------------------------------
@@ -26,11 +28,11 @@ template factorial(int x : 1)
 
 unittest
 {
-	writefln("UnitTest: testtemplate");
 	const int y = 10;
 	auto x = factorial!(y);
 }
 
+// some compile-time asserts to check compile-time function
 static assert(factorial!(1) == 1);
 static assert(factorial!(2) == 2);
 static assert(factorial!(3) == 6);
