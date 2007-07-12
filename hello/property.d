@@ -79,7 +79,7 @@ unittest {
 			//table["age"] = this.age = new Property!(int)("age", age);
 			this.name = new Property!(char[])("name", name); this.name.reg(table);
 			this.age = new Property!(int)("age", age); this.age.reg(table);
-			this.sex = new Property!(int)("sex", sex); this.sex.reg(table);
+			this.sex = new Property!(char)("sex", sex); this.sex.reg(table);
 			writefln("len=%s", table.length);
 		}
 		char[] toString() {
