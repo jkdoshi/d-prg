@@ -1,6 +1,8 @@
 ﻿/++
  + Module to test boxing and unboxing.
  +/
+module boxing;
+
 import std.boxer;
 import std.stdio;
 
