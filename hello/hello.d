@@ -1,4 +1,9 @@
-﻿import std.stdio;
+﻿/++
+ + the main program module.
+ +/
+module hello;
+
+import std.stdio;
 
 //import testclass;
 //import testtemplate;
@@ -6,9 +11,10 @@
 //import aa;
 //import boxing;
 //import mem;
-import mixins;
+//import mixins;
+import io;
 
 void main()
 {
-	writefln("main");
+  writefln("main");
 }
